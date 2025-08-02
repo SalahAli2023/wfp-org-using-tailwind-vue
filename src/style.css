@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark , .dark *));
+@theme {
+    
+    --color-wfp-blue:#007dbc; /* theme('colors.blue.900'); */
+    --color-wfp-dark-blue:#003A5D; /*theme('colors.blue.900'); */
+    --color-primary-color: #b6d9ff; /*theme(colors.blue.800);  */
+    --color-wfp-orange:#E84E10; /*theme(colors.orange.700); */
+    --color-wfp-orange-hover:#f67e4e; /*theme(colors.blue.900); */
+    --color-wfp-yellow: #FFC72C; /*theme(colors.yellow.700); */
+    --color-text-color: #333333; /*theme(colors.gray.700); */
+    --color-text-light: #666666; /*theme(colors.gray.900);   */
+    --color-nav-bg: #f8f8f8; /*theme(colors.gray.700); */
+    --color-card-bg: #ffffff; /*theme(colors.white); */
+     --color-light-gray: #F5F5F5; /*theme(colors.gray.500); */
+    --color-bg-secondary: #f9f9f9; /*theme(colors.gray.900); */
+    --color-bg-color: #FFFFFF;/*,theme(colors.white); */
+    --color-border-color: #616161;
+}
+
+@layer base{
+.dark{
+    --color--bg-color:  #252121; /* theme(colors.black);*/
+    --color--text-color:  #f1f1f1; /* theme(colors.white);*/
+    --color--wfp-dark-blue: #007DBC; /* theme(colors.blue.500);*/
+    --color--wfp-blue: #003A5D; /* theme(colors.blue.800);*/
+    --color--primary-color: #1e90ff; /* theme(colors.blue.300);*/
+    --color--nav-bg: #003A5D; /* theme(colors.blue.700);*/
+    --color--card-bg: #1e1e1e; /* theme(colors.gray.900);*/
+    --color--border-color: #a1a1a1; /* theme(colors.gray.300);*/
+    --color--bg-secondary:#2c2c2c; /* theme(colors.gray.600) ;*/
+    }
+}
+    
+    @font-face {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+    src: url();
+}
