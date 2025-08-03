@@ -54,7 +54,7 @@
 
     const toggleDarkMode = () => {
         isDark.value = !isDark.value;
-        document.documentElement.classList.toggle('dark', isDark.value);
+        document.body.classList.toggle('dark', isDark.value);
         localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
     };
 </script>
