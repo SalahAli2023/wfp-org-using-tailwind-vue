@@ -2,7 +2,7 @@
     <header class="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200">
         <div class="flex items-center">
             <button 
-                class="md:hidden text-gray-500 focus:outline-none" @click="openMobileSidebar">
+                class="md:hidden cursor-pointer text-gray-500 focus:outline-none" @click="$emit('openMobileSidebar')">
             <!-- @click="$emit('toggle-sidebar;)" -->
                 <i class="fas fa-bars"></i>
             </button>
@@ -47,20 +47,21 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
     const isUserMenuOpen = ref(false)
-    const mobileSidebar = ref(null)
+    const mobileSidebar = ref(false)
 
 const toggleUserMenu = () => {
-    isUserMenuOpen.value = !isUserMenuOpen.value
+        isUserMenuOpen.value = !isUserMenuOpen.value
     }
 
 const openMobileSidebar = () => {
     mobileSidebar.value.openSidebar()
+    mobileSidebar.value=true;
 }
 
     const closeUserMenu = (event) => {
-    if (!event.target.closest('.relative')) {
-        isUserMenuOpen.value = false
-    }
+        if (!event.target.closest('.relative')) {
+            isUserMenuOpen.value = false
+        }
     }
 
     onMounted(() => {

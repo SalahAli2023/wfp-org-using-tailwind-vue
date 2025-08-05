@@ -69,7 +69,8 @@
 
 <script setup>
 import { reactive, ref } from 'vue';
-import MainLayout from './mainLayout.vue';
+import MainLayout from './MainLayout.vue';
+
 
 const form = reactive({
   name: '',

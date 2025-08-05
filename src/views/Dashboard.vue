@@ -2,14 +2,14 @@
 <template>
     <div class="flex h-screen overflow-hidden bg-gray-100">
         <!-- Sidebar -->
-        <MobileSidebar/>
+        <MobileSidebar :mobile-open ="mobileSidebarOpen"  @close="mobileSidebarOpen = false"/>
         <Sidebar/>
         <!-- <Sidebar :mobile-open="mobileSidebarOpen"  @close="mobileSidebarOpen = false" /> -->
         
         <!-- Main Content -->
         <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Top Navigation -->
-            <TopNav />
+            <TopNav @openMobileSidebar="mobileSidebarOpen=!mobileSidebarOpen" />
             <!-- <TopNav @toggle-sidebar="mobileSidebarOpen =!mobileSidebarOpen" /> -->
             
             <!-- Main Content Area -->

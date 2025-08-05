@@ -34,7 +34,7 @@
 <script>
 
     import { ref } from 'vue'
-    import MainLayout from './mainLayout.vue';
+    import MainLayout from './MainLayout.vue';
     
     export default {
         setup() {
