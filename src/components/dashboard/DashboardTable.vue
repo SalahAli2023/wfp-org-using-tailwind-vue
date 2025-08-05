@@ -35,7 +35,7 @@
                     <div class="flex-shrink-0 h-10 w-10">
                     <img 
                         class="h-10 w-10 rounded-full" 
-                        :src="require(`@/assets/images/${project.image}`)" 
+                        :src="project.image" 
                         :alt="project.name"
                     >
                     </div>
@@ -79,12 +79,43 @@
 </template>
 
 <script setup>
-    defineProps({
-    projects: {
-        type: Array,
-        required: true
-    }
-    });
+    // const props = defineProps({
+    // projects: {
+    //     type: Array,
+    //     required: true
+    // }
+    // });
+
+    const projects = [{
+        id: 1,
+        name: 'Food Security',
+        category: 'Emergency Relief',
+        image: '../src/assets/images/proj1.jpg',
+        status: 'Active',
+        beneficiaries: '8,742',
+        budget: '$1.2M',
+        progress: 75
+    },
+    {
+        id: 2,
+        name: "Women's Empowerment",
+        category: 'Development',
+        image: '../src/assets/images/proj2.jpg',
+        status: 'Active',
+        beneficiaries: '2,150',
+        budget: '$450K',
+        progress: 40
+    },
+    {
+        id: 3,
+        name: 'School Feeding',
+        category: 'Education',
+        image: '../src/assets/images/proj3.jpg',
+        status: 'Planning',
+        beneficiaries: null,
+        budget: '$300K',
+        progress: 15
+    }]
 
     const headers = [
     { key: 'name', label: 'Project' },

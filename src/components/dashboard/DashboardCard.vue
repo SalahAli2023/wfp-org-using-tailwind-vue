@@ -6,7 +6,8 @@
             <p class="text-3xl font-bold" :class="textColor">{{ value }}</p>
         </div>
         <div class="p-3 rounded-full" :class="iconBgColor">
-            <i :class="['fas', `fa-${icon}`, 'text-xl']" :class="iconColor"></i>
+            <i :class="['fas', `fa-${icon}`, 'text-xl']"></i>
+            <!-- <i :class="['fas', `fa-${icon}`, 'text-xl']" :class="iconColor"></i> -->
         </div>
         </div>
         <p class="mt-2 text-sm" :class="trendTextColor">

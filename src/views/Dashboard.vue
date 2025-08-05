@@ -2,38 +2,41 @@
 <template>
     <div class="flex h-screen overflow-hidden bg-gray-100">
         <!-- Sidebar -->
-        <Sidebar :mobile-open="mobileSidebarOpen" @close="mobileSidebarOpen = false" />
+        <MobileSidebar/>
+        <Sidebar/>
+        <!-- <Sidebar :mobile-open="mobileSidebarOpen"  @close="mobileSidebarOpen = false" /> -->
         
         <!-- Main Content -->
         <div class="flex flex-col flex-1 overflow-hidden">
-        <!-- Top Navigation -->
-        <TopNav @toggle-sidebar="mobileSidebarOpen = !mobileSidebarOpen" />
-        
-        <!-- Main Content Area -->
-        <main class="flex-1 overflow-auto p-4 bg-gray-50">
-            <!-- Stats Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-            <DashboardCard 
-                v-for="stat in stats"
-                :key="stat.title"
-                :title="stat.title"
-                :value="stat.value"
-                :icon="stat.icon"
-                :trend="stat.trend"
-                :trend-direction="stat.trendDirection"
-                :color="stat.color"
-            />
-            </div>
+            <!-- Top Navigation -->
+            <TopNav />
+            <!-- <TopNav @toggle-sidebar="mobileSidebarOpen =!mobileSidebarOpen" /> -->
+            
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-auto p-4 bg-gray-50">
+                <!-- Stats Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+                <DashboardCard 
+                    v-for="stat in stats"
+                    :key="stat.title"
+                    :title="stat.title"
+                    :value="stat.value"
+                    :icon="stat.icon"
+                    :trend="stat.trend"
+                    :trend-direction="stat.trendDirection"
+                    :color="stat.color"
+                />
+                </div>
 
-            <!-- Recent Activities and Quick Actions -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-            <RecentActivities class="lg:col-span-2" :activities="activities" />
-            <QuickActions :actions="quickActions" />
-            </div>
+                <!-- Recent Activities and Quick Actions -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                <RecentActivities class="lg:col-span-2" :activities="activities" />
+                <QuickActions :actions="quickActions" />
+                </div>
 
-            <!-- Projects Overview -->
-            <DashboardTable :projects="projects" />
-        </main>
+                <!-- Projects Overview -->
+                <DashboardTable :projects="projects" />
+            </main>
         </div>
     </div>
 </template>
@@ -42,12 +45,15 @@
     import { ref } from 'vue';
     import Sidebar from '@/components/dashboard/Sidebar.vue';
     import TopNav from '@/components/dashboard/TopNav.vue';
-    // import DashboardCard from '@/components/dashboard/DashboardCard.vue';
+    import DashboardCard from '@/components/dashboard/DashboardCard.vue';
     import RecentActivities from '@/components/dashboard/RecentActivities.vue';
     import QuickActions from '@/components/dashboard/QuickAction.vue';
-    // import DashboardTable from '@/components/dashboard/DashboardTable.vue';
+    import DashboardTable from '@/components/dashboard/DashboardTable.vue';
+import MobileSidebar from '@/components/dashboard/MobileSidebar.vue';
+    // import MobileSidebar from '@/components/dashboard/MobileSidebar.vue';
 
     const mobileSidebarOpen = ref(false);
+    const visibled = ref(false);
 
     // Sample data - would typically come from API in real app
     const stats = ref([
@@ -152,4 +158,5 @@
         progress: 15
     }
     ]);
+
 </script>
