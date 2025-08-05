@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import MainLayout from './mainLayout.vue';
+import MainLayout from './MainLayout.vue';
 
     const projects = [
         {
