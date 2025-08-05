@@ -5,7 +5,7 @@
             :class="{'translate-x-0': isOpen, '-translate-x-full': !isOpen}">
         <div class="flex items-center justify-between h-16 px-4 border-b border-blue-800">
             <div class="flex items-center">
-                <img src="../assets/images/wfp-logo.svg" alt="WFP Logo" class="h-8 mr-2">
+                <img src="/src/assets/images/wfp-logo.svg" alt="WFP Logo" class="h-8 mr-2">
                 <span class="text-lg font-bold">WFP Dashboard</span>
             </div>
             <button class="text-white" @click="closeSidebar">
@@ -42,7 +42,7 @@
         </div>
         <div class="p-4 border-t border-blue-800">
             <div class="flex items-center">
-            <img class="w-10 h-10 rounded-full" src="../assets/images/salah.jpg" alt="Admin">
+            <img class="w-10 h-10 rounded-full" src="/src/assets/images/salah.jpg" alt="Admin">
             <div class="ml-3">
                 <p class="text-sm font-medium">Admin User</p>
                 <p class="text-xs text-blue-200">admin@wfp.org</p>
