@@ -11,7 +11,10 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     tailwindcss(),
-  ],
+  ],  
+  
+  base: process.env.NODE_ENV === 'production' ? '/wfp-org-using-tailwind-vue/' : '/',
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
