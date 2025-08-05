@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 22.17.1
           
       - name: Install dependencies
         run: npm install
@@ -28,4 +28,3 @@ jobs:
           publish_dir: ./dist
           # Enable for SPA routing:
           enable_jekyll: true
-          cname: yourdomain.com # (اختياري إذا كان لديك نطاق مخصص)
