@@ -3,9 +3,7 @@
     <div class="flex h-screen overflow-hidden bg-gray-100">
         <!-- Sidebar -->
         <MobileSidebar :mobile-open ="mobileSidebarOpen"  @close="mobileSidebarOpen = false"/>
-        <Sidebar/>
-        <!-- <Sidebar :mobile-open="mobileSidebarOpen"  @close="mobileSidebarOpen = false" /> -->
-        
+        <Sidebar/>        
         <!-- Main Content -->
         <div class="flex flex-col flex-1 overflow-hidden">
             <!-- Top Navigation -->
@@ -49,8 +47,7 @@
     import RecentActivities from '@/components/dashboard/RecentActivities.vue';
     import QuickActions from '@/components/dashboard/QuickAction.vue';
     import DashboardTable from '@/components/dashboard/DashboardTable.vue';
-import MobileSidebar from '@/components/dashboard/MobileSidebar.vue';
-    // import MobileSidebar from '@/components/dashboard/MobileSidebar.vue';
+    import MobileSidebar from '@/components/dashboard/MobileSidebar.vue';
 
     const mobileSidebarOpen = ref(false);
     const visibled = ref(false);

@@ -18,7 +18,7 @@ export default defineConfig({
     tailwindcss(),
   ],
     
-  base: process.env.NODE_ENV === 'production' ? '/wfp-org-using-tailwind-vue/' : '/',
+  base: '/wfp-org-using-tailwind-vue/',
 
   resolve: {
     alias: {
