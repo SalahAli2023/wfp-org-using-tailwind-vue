@@ -1,6 +1,6 @@
 <template>
-  <section id="projects" class="projects-section py-8 bg-bg-color">
-    <div class="container mx-auto px-4">
+  <section id="projects" class="projects-section py-8" >
+    <div class="container mx-auto px-4 bg-light-gray">
       <h2 class="text-3xl text-center mb-8">Our Projects</h2>
       
       <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

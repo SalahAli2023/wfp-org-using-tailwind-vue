@@ -1,6 +1,6 @@
 <template>
   <MainLayout>
-    <section class="contact-section py-12 bg-bg-color">
+    <section class="contact-section py-12">
       <div class="container mx-auto px-4 max-w-4xl">
         <h2 class="text-3xl text-center mb-8">Contact Us</h2>
         

@@ -10,6 +10,9 @@
         </div>
         
         <div class="flex items-center space-x-4">
+            <button  @click="darkMode.toggleDarkMode()" class="p-2 text-gray-500 rounded-full  hover:bg-gray-100" title="Notifications">
+                {{ darkMode.isDark ? '☀️' : '🌙' }}
+            </button>
             <router-link 
                 to="/" 
                 class="p-2 text-gray-500 rounded-full hover:bg-gray-100"
@@ -44,19 +47,26 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
-
+    import { ref, onMounted, onUnmounted } from 'vue'
+    import { useDarkMode} from '@/composables/useDarkMode';
+    
     const isUserMenuOpen = ref(false)
     const mobileSidebar = ref(false)
+    // const mobileMenuOpen = ref(false);
 
-const toggleUserMenu = () => {
-        isUserMenuOpen.value = !isUserMenuOpen.value
+    // const darkMode =ref(useDarkMode())
+    // const darkMode =useDarkMode()
+    const darkMode = ref(useDarkMode());
+
+    
+    const toggleUserMenu = () => {
+            isUserMenuOpen.value = !isUserMenuOpen.value
+        }
+
+    const openMobileSidebar = () => {
+        mobileSidebar.value.openSidebar()
+        mobileSidebar.value=true;
     }
-
-const openMobileSidebar = () => {
-    mobileSidebar.value.openSidebar()
-    mobileSidebar.value=true;
-}
 
     const closeUserMenu = (event) => {
         if (!event.target.closest('.relative')) {

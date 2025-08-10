@@ -16,8 +16,9 @@
                         <img class="icon moon-icon absolute w-4 h-4 top-1/2 -translate-y-1/2 z-10 left-0 opacity-0 dark:opacity-100" src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20384%20512'%3e%3c!--!Font%20Awesome%20Free%206.7.2%20by%20@fontawesome%20-%20https://fontawesome.com%20License%20-%20https://fontawesome.com/license/free%20Copyright%202025%20Fonticons,%20Inc.--%3e%3cpath%20d='M223.5%2032C100%2032%200%20132.3%200%20256S100%20480%20223.5%20480c60.6%200%20115.5-24.2%20155.8-63.4c5-4.9%206.3-12.5%203.1-18.7s-10.1-9.7-17-8.5c-9.8%201.7-19.8%202.6-30.1%202.6c-96.9%200-175.5-78.8-175.5-176c0-65.8%2036-123.1%2089.3-153.3c6.1-3.5%209.2-10.5%207.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z'/%3e%3c/svg%3e" alt="dark_mode" style="filter: brightness(0) saturate(100%) invert(100%) sepia(97%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);">
                     </span> 
                 </label>-->
-                <button @click="toggleDarkMode" class="bg-light-gray mx-4 p-1 rounded-full cursor-pointer">
-                    <span v-if="isDark" class="text-xxl">🌞</span>
+                <button @click="darkMode.toggleDarkMode()" class="bg-light-gray mx-4 p-1 rounded-full cursor-pointer">
+                    <!-- {{ darkMode.isDark ? '☀️' : '🌙' }} -->
+                    <span v-if="darkMode.isDark" class="text-xxl">🌞</span>
                     <span v-else class="text-xxl">🌙</span>
                 </button>
 
@@ -51,17 +52,18 @@
 
 <script setup>
     import { ref } from 'vue';
+    import { useDarkMode } from '@/composables/useDarkMode';
 
     const mobileMenuOpen = ref(false);
-    const isDark = ref(false);
+    const darkMode = ref(useDarkMode());
 
     const toggleMobileMenu = () => {
         mobileMenuOpen.value = !mobileMenuOpen.value;
     };
 
-    const toggleDarkMode = () => {
-        isDark.value = !isDark.value;
-        document.body.classList.toggle('dark', isDark.value);
-        localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
-    };
+    // const toggleDarkMode = () => {
+    //     isDark.value = !isDark.value;
+    //     document.body.classList.toggle('dark', isDark.value);
+    //     localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
+    // };
 </script>

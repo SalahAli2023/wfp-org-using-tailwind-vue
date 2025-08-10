@@ -1,6 +1,6 @@
 <template>
     <MainLayout>
-        <section id="projects" class="projects-section py-8 bg-bg-color">
+        <section id="projects" class="projects-section py-8">
             <div class="container mx-auto px-4">
             <h2 class="text-3xl text-center mb-8">Our Projects</h2>
             

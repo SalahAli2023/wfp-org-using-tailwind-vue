@@ -6,6 +6,7 @@ import Header from '@/components/common/Header.vue';
 
 <template>
     <Header/>
-    <slot></slot>
+    <div class="bg-bg-secondary">
+    <slot></slot></div>
     <Footer/>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <MainLayout>
-        <div class="about-page py-8 bg-bg-color dark:bg-dark-bg">
+        <div class="about-page py-8">
             <div class="container mx-auto px-4">
             <h1 class="text-4xl font-bold mb-8 text-center">About WFP</h1>
             
@@ -13,7 +13,7 @@
                 <img src="@/assets/images/about.webp" alt="Our Mission" class="rounded-lg shadow-lg">
             </div>
 
-            <div class="values-section bg-bg-color p-8 rounded-lg">
+            <div class="values-section bg-light-gray p-8 rounded-lg">
                 <h2 class="text-2xl font-semibold mb-6 text-center">Our Core Values</h2>
                 <div class="grid md:grid-cols-3 gap-6">
                 <div 
@@ -31,13 +31,12 @@
     </MainLayout>
 </template>
 
-<script>
+<script setup>
 
     import { ref } from 'vue'
     import MainLayout from './MainLayout.vue';
     
-    export default {
-        setup() {
+    
             const coreValues = ref([
             {
                 title: 'Integrity',
@@ -64,11 +63,6 @@
                 description: 'We take responsibility for our actions and their consequences.'
             }
             ])
-
-            return {
-            coreValues
-            }
-        }
-    }
+        
 </script>
 

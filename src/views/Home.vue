@@ -8,9 +8,11 @@ import MainLayout from './MainLayout.vue';
 
 <template>
     <MainLayout>
-        <HeroSection />
-        <AboutSection />
-        <ImpactStats />
-        <ProjectsSection />
+        <main >
+            <HeroSection />
+            <AboutSection />
+            <ImpactStats />
+            <ProjectsSection />
+        </main>
     </MainLayout>
 </template>
