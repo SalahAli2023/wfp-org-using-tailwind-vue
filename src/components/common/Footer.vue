@@ -1,6 +1,6 @@
 <template>
-    <footer class=" bg-wfp-blue text-white py-12 px-auto">
-        <div class="container mx-12">
+    <footer class=" bg-wfp-blue text-white py-12">
+        <div class="container mx-auto px-4">
             <div class="footer-grid grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="footer-column">
                     <router-link to="/" class="flex items-center mb-4">
