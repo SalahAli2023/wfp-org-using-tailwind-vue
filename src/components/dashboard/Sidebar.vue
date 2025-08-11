@@ -1,21 +1,14 @@
 
 
 <template>
-    <!-- Mobile Sidebar Backdrop -->
-    <!-- <div 
-        v-if="mobileOpen"
-        class="fixed inset-0 bg-gray-200 opacity-78 z-40 md:hidden"
-        @click="$emit('close')"
-    > 
-    </div>-->
-        <!-- Sidebar -->
         
+    <!-- Sidebar -->    
     <aside class="hidden md:flex md:flex-shrink-0">
-        <div class="flex flex-col w-64 bg-wfp-dark-blue text-white">
+        <div class="flex flex-col w-64 bg-wfp-blue text-white">
         <!-- Logo and Title -->
         <div class="flex items-center justify-center h-16 px-4 border-b border-blue-800">
             <img src="@/assets/images/wfp-logo.svg" alt="WFP Logo" class="h-8 mr-2">
-            <span class="text-lg font-bold">WFP Dashboard</span>
+            <span class="text-lg font-bold">WFP<span class="text-lg font-bold text-wfp-orange-hover"> Dashboard</span></span>
         </div>
         
         <!-- Navigation -->

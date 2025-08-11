@@ -17,9 +17,9 @@
                     </span> 
                 </label>-->
                 <button @click="darkMode.toggleDarkMode()" class="bg-light-gray mx-4 p-1 rounded-full cursor-pointer">
-                    <!-- {{ darkMode.isDark ? '☀️' : '🌙' }} -->
-                    <span v-if="darkMode.isDark" class="text-xxl">🌞</span>
-                    <span v-else class="text-xxl">🌙</span>
+                    {{ darkMode.isDark ? '🌞' : '🌙' }}
+                    <!-- <span v-if="darkMode.isDark" class="text-xxl">🌞</span>
+                    <span v-else class="text-xxl">🌙</span> -->
                 </button>
 
                 <button @click="toggleMobileMenu" class="menu-toggle md:hidden flex flex-col justify-between w-6 h-5 bg-transparent border-none cursor-pointer p-0">

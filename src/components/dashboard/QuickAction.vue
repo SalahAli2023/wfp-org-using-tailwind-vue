@@ -1,24 +1,24 @@
 <template>
-    <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="bg-bg rounded-lg shadow overflow-hidden">
         <div class="px-6 py-4 border-b border-gray-200">
-        <h2 class="text-lg font-semibold text-gray-800">Quick Actions</h2>
+            <h2 class="text-lg font-semibold">Quick Actions</h2>
         </div>
         
-        <div class="p-6 grid grid-cols-2 gap-4">
-        <router-link 
-            v-for="action in actions" 
-            :key="action.title"
-            to="#"
-            class="flex flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
-        >
-            <div 
-            class="p-3 mb-2 rounded-full"
-            :class="iconBgColor(action.color)"
+        <div class="p-6 grid grid-cols-2 gap-4 bg-card">
+            <router-link 
+                v-for="action in actions" 
+                :key="action.title"
+                to="#"
+                class="flex   flex-col items-center justify-center p-4 rounded-lg border border-gray-200 hover:bg-gray-200 transition-colors"
             >
-            <i :class="['fas', `fa-${action.icon}`]"></i>
-            </div>
-            <span class="text-sm font-medium text-gray-700">{{ action.title }}</span>
-        </router-link>
+                <div 
+                class="p-3 mb-2 rounded-full"
+                :class="iconBgColor(action.color)"
+                >
+                <i :class="['fas', `fa-${action.icon}`]"></i>
+                </div>
+                <span class="text-sm font-medium text-gray-500">{{ action.title }}</span>
+            </router-link>
         </div>
     </div>
 </template>

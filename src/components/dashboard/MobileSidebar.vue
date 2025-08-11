@@ -1,12 +1,12 @@
 <template>
     <div  v-if="mobileOpen" class=" md:hidden fixed inset-0 z-40" @click="$emit('close')">
         <div class="fixed inset-0 bg-gray-600 bg-opacity-75" :class="{'opacity-100': mobileOpen, 'opacity-0': !mobileOpen}"></div>
-        <div class="relative flex flex-col w-72 h-full bg-wfp-dark-blue transform transition-all duration-300 ease-in-out" 
+        <div class="relative flex flex-col w-72 h-full bg-wfp-blue transform transition-all duration-300 ease-in-out" 
             :class="{'translate-x-0': mobileOpen, '-translate-x-full': !mobileOpen}">
         <div class="flex items-center justify-between h-16 px-4 border-b border-blue-800">
             <div class="flex items-center">
                 <img src="/src/assets/images/wfp-logo.svg" alt="WFP Logo" class="h-8 mr-2">
-                <span class="text-lg text-white font-bold">WFP Dashboard</span>
+            <span class="text-lg font-bold">WFP<span class="text-lg font-bold text-wfp-orange"> Dashboard</span></span>
             </div>
             <button class="text-white" @click="$emit('close')">
                 <i class="fas fa-times"></i>

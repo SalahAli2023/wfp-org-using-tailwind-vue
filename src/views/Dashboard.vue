@@ -1,6 +1,6 @@
 
 <template>
-    <div class="flex h-screen overflow-hidden bg-gray-100">
+    <div class="flex h-screen overflow-hidden bg-bg-color">
         <!-- Sidebar -->
         <MobileSidebar :mobile-open ="mobileSidebarOpen"  @close="mobileSidebarOpen = false"/>
         <Sidebar/>        
@@ -11,7 +11,7 @@
             <!-- <TopNav @toggle-sidebar="mobileSidebarOpen =!mobileSidebarOpen" /> -->
             
             <!-- Main Content Area -->
-            <main class="flex-1 overflow-auto p-4 bg-bg-color">
+            <main class="flex-1 overflow-auto p-4 ">
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
                 <DashboardCard 

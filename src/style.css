@@ -21,11 +21,16 @@
     --color-bg-secondary: #f9f9f9; 
     
     --color-border-color: #616161;
+
+    --color-bg: #f9fafb;
+    --color-text: #111827;
+    --color-card: #ffffff;
+    --color-primary: #2563eb;
 }
 
 @layer base{
     .dark{
-        --color--bg-color: #252121; 
+        --color-bg-color: #252121; 
         --color-text-color: #f1f1f1; 
         --color-wfp-dark-blue: #007DBC; 
         --color-wfp-blue: #003A5D;
@@ -35,6 +40,11 @@
         --color-border-color: #a1a1a1; 
         --color-bg-secondary:#2c2c2c;
         --color-light-gray: #2a2a2a;
+
+        --color-bg: #282f40;
+        --color-text: #f9fafb;
+        --color-card: #1f2937;
+        --color-primary: #3b82f6;
     }
 }
     

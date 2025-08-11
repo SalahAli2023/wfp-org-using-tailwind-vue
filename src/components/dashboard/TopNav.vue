@@ -1,31 +1,31 @@
 <template>
-    <header class="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200">
+    <header class="flex items-center justify-between h-16 px-4 bg-wfp-blue text-white border-b border-gray-200">
         <div class="flex items-center">
             <button 
                 class="md:hidden cursor-pointer text-gray-500 focus:outline-none" @click="$emit('openMobileSidebar')">
             <!-- @click="$emit('toggle-sidebar;)" -->
                 <i class="fas fa-bars"></i>
             </button>
-            <h1 class="ml-4 text-xl font-semibold text-gray-800">Dashboard</h1>
+            <!-- <h1 class="ml-4 text-xl font-semibold ">Dashboard</h1> -->
         </div>
         
         <div class="flex items-center space-x-4">
-            <button  @click="darkMode.toggleDarkMode()" class="p-2 text-gray-500 rounded-full  hover:bg-gray-100" title="Notifications">
-                {{ darkMode.isDark ? '☀️' : '🌙' }}
+            <button  @click="darkMode.toggleDarkMode()" class="p-2 text-gray-500 rounded-full  hover:bg-gray-600" title="Notifications">
+                {{ darkMode.isDark ? '🌞' : '🌙' }}
             </button>
             <router-link 
                 to="/" 
-                class="p-2 text-gray-500 rounded-full hover:bg-gray-100"
+                class="p-2 rounded-full hover:bg-gray-600"
                 title="Home"
             >
                 <i class="fas fa-home"></i>
             </router-link>
             
-            <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100" title="Notifications">
+            <button class="p-2 rounded-full hover:bg-gray-600" title="Notifications">
                 <i class="fas fa-bell"></i>
             </button>
             
-            <button class="p-2 text-gray-500 rounded-full hover:bg-gray-100" title="Messages">
+            <button class="p-2 rounded-full hover:bg-gray-600" title="Messages">
                 <i class="fas fa-envelope"></i>
             </button>
             <div class="relative">

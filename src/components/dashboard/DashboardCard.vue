@@ -1,13 +1,12 @@
     <template>
-    <div class="bg-white rounded-lg shadow p-6">
+    <div class="bg-bg rounded-lg shadow p-6">
         <div class="flex items-center justify-between">
         <div>
-            <p class="text-sm font-medium text-gray-500">{{ title }}</p>
+            <p class="text-sm font-medium ">{{ title }}</p>
             <p class="text-3xl font-bold" :class="textColor">{{ value }}</p>
         </div>
         <div class="p-3 rounded-full" :class="iconBgColor">
-            <i :class="['fas', `fa-${icon}`, 'text-xl']"></i>
-            <!-- <i :class="['fas', `fa-${icon}`, 'text-xl']" :class="iconColor"></i> -->
+            <i class="text-black" :class="['fas', `fa-${icon}`, 'text-xl']"></i>
         </div>
         </div>
         <p class="mt-2 text-sm" :class="trendTextColor">
@@ -36,7 +35,7 @@
 
     const colorClasses = {
     blue: {
-        text: 'text-wfp-blue',
+        text: 'text-wfp-dark-blue',
         bg: 'bg-blue-100',
         icon: 'text-wfp-blue'
     },
@@ -59,15 +58,15 @@
 
     const textColor = computed(() => colorClasses[props.color].text);
     const iconBgColor = computed(() => colorClasses[props.color].bg);
-    const iconColor = computed(() => colorClasses[props.color].icon);
+    // const iconColor = computed(() => colorClasses[props.color].icon);
 
     const trendIcon = computed(() => [
-    'fas',
-    props.trendDirection === 'up' ? 'fa-arrow-up' : 'fa-arrow-down',
-    'mr-1'
+        'fas',
+        props.trendDirection === 'up' ? 'fa-arrow-up' : 'fa-arrow-down',
+        'mr-1'
     ]);
 
     const trendTextColor = computed(() => 
-    props.trendDirection === 'up' ? 'text-green-600' : 'text-red-600'
+        props.trendDirection === 'up' ? 'text-green-600' : 'text-red-600'
     );
 </script>
