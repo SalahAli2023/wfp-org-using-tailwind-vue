@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-import { createWebHistory } from 'vue-router'
+// import { createWebHistory } from 'vue-router'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'

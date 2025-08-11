@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '@/views/Home.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import About from '@/views/About.vue'
@@ -16,12 +16,12 @@ const router = createRouter({
     ]
 })
 
-router.beforeEach((to, from, next) => {
-    if (to.matched.length === 0) {
-        next('/')
-    } else {
-        next()
-    }
-})
+// router.beforeEach((to, from, next) => {
+//     if (to.matched.length === 0) {
+//         next('/')
+//     } else {
+//         next()
+//     }
+// })
 
 export default router
