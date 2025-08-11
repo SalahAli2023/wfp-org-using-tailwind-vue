@@ -58,7 +58,7 @@
 
     const textColor = computed(() => colorClasses[props.color].text);
     const iconBgColor = computed(() => colorClasses[props.color].bg);
-    // const iconColor = computed(() => colorClasses[props.color].icon);
+    const iconColor = computed(() => colorClasses[props.color].icon);
 
     const trendIcon = computed(() => [
         'fas',

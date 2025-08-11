@@ -1,79 +1,79 @@
 <template>
     <div class="bg-bg rounded-lg shadow overflow-hidden text-text">
         <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
-        <h2 class="text-lg font-semibold">Projects Overview</h2>
-        <router-link 
-            to="/projects" 
-            class="text-sm font-medium text-wfp-dark-blue hover:text-blue-600 hover:underline"
-        >
-            View all projects
-        </router-link>
+            <h2 class="text-lg font-semibold">Projects Overview</h2>
+            <router-link 
+                to="/projects" 
+                class="text-sm font-medium text-wfp-dark-blue hover:text-blue-600 hover:underline"
+            >
+                View all projects
+            </router-link>
         </div>
         
         <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead class=" bg-card">
-                <tr>
-                    <th 
-                    v-for="header in headers" 
-                    :key="header.key"
-                    scope="col" 
-                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                    >
-                    {{ header.label }}
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="bg-card divide-y divide-gray-200">
-                <tr 
-                    v-for="project in projects" 
-                    :key="project.name"
-                    class="hover:bg-gray-200"
-                >
-                    <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                        <img 
-                            class="h-10 w-10 rounded-full" 
-                            :src="project.image" 
-                            :alt="project.name"
+            <table class="min-w-full divide-y divide-gray-200">
+                <thead class=" bg-card">
+                    <tr>
+                        <th 
+                        v-for="header in headers" 
+                        :key="header.key"
+                        scope="col" 
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                         >
-                        </div>
-                        <div class="ml-4">
-                        <div class="text-sm font-medium text-gray-900">{{ project.name }}</div>
-                        <div class="text-sm text-gray-500">{{ project.category }}</div>
-                        </div>
-                    </div>
-                    </td>
-                    
-                    <td class="px-6 py-4 whitespace-nowrap">
-                    <span 
-                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
-                        :class="statusClass(project.status)"
+                        {{ header.label }}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-card divide-y divide-gray-200">
+                    <tr 
+                        v-for="project in projects" 
+                        :key="project.name"
+                        class="hover:bg-gray-200"
                     >
-                        {{ project.status }}
-                    </span>
-                    </td>
-                    
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ project.beneficiaries }}
-                    </td>
-                    
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    {{ project.budget }}
-                    </td>
-                    
-                    <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="w-full bg-gray-200 rounded-full h-2.5">
-                        <div 
-                        class="bg-wfp-blue h-2.5 rounded-full" 
-                        :style="`width: ${project.progress}%`"
-                        ></div>
-                    </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0 h-10 w-10">
+                                <img 
+                                    class="h-10 w-10 rounded-full" 
+                                    :src="project.image" 
+                                    :alt="project.name"
+                                >
+                                </div>
+                                <div class="ml-4">
+                                    <div class="text-sm font-medium text-wfp-dark-blue">{{ project.name }}</div>
+                                    <div class="text-sm text-gray-500">{{ project.category }}</div>
+                                </div>
+                            </div>
+                        </td>
+                        
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span 
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full"
+                                :class="statusClass(project.status)"
+                            >
+                                {{ project.status }}
+                            </span>
+                        </td>
+                        
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ project.beneficiaries }}
+                        </td>
+                        
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            {{ project.budget }}
+                        </td>
+                        
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div 
+                                class="bg-wfp-blue h-2.5 rounded-full" 
+                                :style="`width: ${project.progress}%`"
+                                ></div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </template>
