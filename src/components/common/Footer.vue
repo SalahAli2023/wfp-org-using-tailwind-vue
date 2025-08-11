@@ -91,6 +91,8 @@
 
 <script setup>
     import { computed } from 'vue';
+    import { ref } from 'vue';
+    import { useToast } from 'vue-toastification';
 
     const currentYear = computed(() => new Date().getFullYear());
 
@@ -114,6 +116,53 @@
         { name: 'Privacy Policy', path: '/privacy' },
         { name: 'Financial Reports', path: '/financials' }
         ];
+
+    const toast = useToast();
+
+    const newsletterEmail = ref('');
+    const newsletterError = ref('');
+    const newsletterSuccess = ref('');
+    const isSubmitting = ref(false);
+
+    const validateEmail = (email) => {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    };
+
+    const handleNewsletterSubmit = async () => {
+        newsletterError.value = '';
+        newsletterSuccess.value = '';
+        
+        // Validate email
+        if (!newsletterEmail.value) {
+            newsletterError.value = 'Email is required';
+            return;
+        }
+        
+        if (!validateEmail(newsletterEmail.value)) {
+            newsletterError.value = 'Please enter a valid email address';
+            return;
+        }
+
+        isSubmitting.value = true;
+        
+        try {
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // On success
+            newsletterSuccess.value = 'Thank you for subscribing!';
+            newsletterEmail.value = '';
+            toast.success("You've been subscribed to our newsletter!");
+        } catch (error) {
+            newsletterError.value = 'Subscription failed. Please try again.';
+            toast.error("Subscription failed. Please try again.");
+        } finally {
+            isSubmitting.value = false;
+        }
+    };
+
+
 </script>
 
 

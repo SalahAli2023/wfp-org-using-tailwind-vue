@@ -60,10 +60,4 @@
     const toggleMobileMenu = () => {
         mobileMenuOpen.value = !mobileMenuOpen.value;
     };
-
-    // const toggleDarkMode = () => {
-    //     isDark.value = !isDark.value;
-    //     document.body.classList.toggle('dark', isDark.value);
-    //     localStorage.setItem('theme', isDark.value ? 'dark' : 'light');
-    // };
 </script>
