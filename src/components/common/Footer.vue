@@ -83,6 +83,7 @@
                 </div>
             </div>
             
+            
             <div class="footer-bottom border-t border-border-color pt-4 text-center text-sm">
                 <p>&copy; {{ currentYear }} World Food Programme. All rights reserved.</p>
             </div>  
