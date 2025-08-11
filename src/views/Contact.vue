@@ -68,90 +68,93 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue';
-import MainLayout from './MainLayout.vue';
+  import { reactive, ref } from 'vue';
+  import MainLayout from './MainLayout.vue';
+  import { useToast } from 'vue-toastification';
 
 
-const form = reactive({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-});
-
-const errors = reactive({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-});
-
-const isSubmitting = ref(false);
-
-// Validation patterns
-const patterns = {
-  name: /^[a-zA-Z\s]{3,60}$/,
-  email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-  subject: /^[a-zA-Z\s]{5,350}$/,
-  message: /^[a-zA-Z\s]{10,350}$/
-};
-
-const errorMessages = {
-  name: {
-    required: 'Name is required',
-    invalid: 'Please enter a valid name (3-60 characters)'
-  },
-  email: {
-    required: 'Email is required',
-    invalid: 'Please enter a valid email address'
-  },
-  subject: {
-    required: 'Subject is required',
-    invalid: 'Subject must be 5-350 characters'
-  },
-  message: {
-    required: 'Message is required',
-    invalid: 'Message must be 10-350 characters'
-  }
-};
-
-const validateField = (field) => {
-  if (!form[field]) {
-    errors[field] = errorMessages[field].required;
-    return false;
-  }
-  
-  if (!patterns[field].test(form[field])) {
-    errors[field] = errorMessages[field].invalid;
-    return false;
-  }
-  
-  errors[field] = '';
-  return true;
-};
-
-const validateForm = () => {
-  let isValid = true;
-  Object.keys(form).forEach(field => {
-    if (!validateField(field)) {
-      isValid = false;
-    }
+  const form = reactive({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
   });
-  return isValid;
-};
 
-const handleSubmit = () => {
-  if (!validateForm()) return;
-  
-  isSubmitting.value = true;
-  
-  // Simulate form submission
-  setTimeout(() => {
-    alert('Your message has been sent successfully!');
+  const errors = reactive({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const isSubmitting = ref(false);
+  const toast = useToast()
+
+  // Validation patterns
+  const patterns = {
+    name: /^[a-zA-Z\s]{3,60}$/,
+    email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+    subject: /^[a-zA-Z\s]{5,350}$/,
+    message: /^[a-zA-Z\s]{10,350}$/
+  };
+
+  const errorMessages = {
+    name: {
+      required: 'Name is required',
+      invalid: 'Please enter a valid name (3-60 characters)'
+    },
+    email: {
+      required: 'Email is required',
+      invalid: 'Please enter a valid email address'
+    },
+    subject: {
+      required: 'Subject is required',
+      invalid: 'Subject must be 5-350 characters'
+    },
+    message: {
+      required: 'Message is required',
+      invalid: 'Message must be 10-350 characters'
+    }
+  };
+
+  const validateField = (field) => {
+    if (!form[field]) {
+      errors[field] = errorMessages[field].required;
+      return false;
+    }
+    
+    if (!patterns[field].test(form[field])) {
+      errors[field] = errorMessages[field].invalid;
+      return false;
+    }
+    
+    errors[field] = '';
+    return true;
+  };
+
+  const validateForm = () => {
+    let isValid = true;
     Object.keys(form).forEach(field => {
-      form[field] = '';
+      if (!validateField(field)) {
+        isValid = false;
+      }
     });
-    isSubmitting.value = false;
-  }, 1500);
-};
+    return isValid;
+  };
+
+  const handleSubmit = () => {
+    if (!validateForm()) return;
+    
+    isSubmitting.value = true;
+    
+    // Simulate form submission
+    setTimeout(() => {
+                  
+      toast.success("Your message has been sent successfully!");
+      Object.keys(form).forEach(field => {
+        form[field] = '';
+      });
+      isSubmitting.value = false;
+    }, 1500);
+  };
 </script>
