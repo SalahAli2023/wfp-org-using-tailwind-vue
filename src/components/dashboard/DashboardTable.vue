@@ -4,7 +4,7 @@
         <h2 class="text-lg font-semibold">Projects Overview</h2>
         <router-link 
             to="/projects" 
-            class="text-sm font-medium text-wfp-dark-blue hover:text-wfp-dark-blue"
+            class="text-sm font-medium text-wfp-dark-blue hover:text-blue-600 hover:underline"
         >
             View all projects
         </router-link>

@@ -21,7 +21,7 @@
                             :key="index"
                             class="value-card bg-card-bg p-6 rounded-lg shadow"
                         >
-                            <h3 class="text-xl font-semibold mb-3 text-wfp-blue">{{ value.title }}</h3>
+                            <h3 class="text-xl font-semibold mb-3 text-wfp-dark-blue">{{ value.title }}</h3>
                             <p>{{ value.description }}</p>
                         </div>
                     </div>
